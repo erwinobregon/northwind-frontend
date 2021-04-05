@@ -1,11 +1,14 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "1f4e4cca-5591-49d2-b40d-2d820040bd9e"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "northwindweb": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src", 
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -29,7 +32,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -44,10 +48,15 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
             }
           }
         },

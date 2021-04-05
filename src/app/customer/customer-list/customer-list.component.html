@@ -1,0 +1,31 @@
+<div class="customer-container">
+    <div class="new-customer">
+        <button mat-raised-button color="primary" (click)="newCustomer()">Primary</button>
+    </div>
+    <div>
+        <div *ngFor="let item of customers" class="customer-card">
+
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar class="customer-header-image"></div>
+                    <mat-card-title>{{item.firstname}}</mat-card-title>
+                    <mat-card-subtitle>Stock Aactual: {{item.name}} </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        {{item.country}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="btn btn-light" (click)="editCustomer(item.id) ">Editar</button>&nbsp;
+                    <button class="btn btn-secundary" (click)="viewDetails(item.id) ">Detail</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    <div class="paginator-container ">
+        <mat-paginator (page)="changePage($event) " [length]="numberOfRecord " [pageSize]="pageSize " [pageSizeOptions]="pageSizeOptions " [pageIndex]="pageIndex ">
+        </mat-paginator>
+
+    </div>
+</div>

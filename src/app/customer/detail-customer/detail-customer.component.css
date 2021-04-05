@@ -1,0 +1,13 @@
+.element-form {
+    display: flex;
+    align-items: center;
+    @media(max-widht: 767px) {
+        flex-direction: colum;
+        align-items: baseline;
+    }
+}
+
+.label-description {
+    width: 110px;
+    margin-bottom: 0;
+}
